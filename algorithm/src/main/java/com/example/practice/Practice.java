@@ -10,6 +10,10 @@ package com.example.practice;
  */
 public class Practice {
     public static void main(String[] args) {
-        System.out.println("sada");
+        char[] tmp = new char[2];
+        for(int i = 0; i < tmp.length;i++){
+            tmp[i] = 'a';
+        }
+        System.out.println();
     }
 }

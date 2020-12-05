@@ -1,6 +1,6 @@
-package com.example.easy;
+package com.example.company.bytedance_2020_12.easy;
 
-public class LengthOfLongestSubstring {
+public class LengthOfLongestSubstring_202012 {
     public static int lengthOfLongestSubstring(String s) {
         if(s == null || s == "" || s.length() == 0){
             return 0;

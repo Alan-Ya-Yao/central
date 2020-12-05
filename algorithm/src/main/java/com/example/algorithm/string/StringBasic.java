@@ -1,9 +1,7 @@
 package com.example.algorithm.string;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -216,8 +214,40 @@ public class StringBasic {
         return result.stream().collect(Collectors.joining());
     }
 
+    public static String convert1(String s, int numRows) {
+        Character[][] steps = new Character[numRows][s.length()];
+//        Arrays.fill(steps, '');
+        int direction = 1; // 1 直接向下，2，斜上走
+        int i = -1, j = 0;
+        for(int step = 0; step < s.length(); step++){
+            if(direction == 1){
+                i += 1;
+            }else{
+                i -= 1;
+                j += 1;
+            }
+            steps[i][j] = s.charAt(step);
+
+            if(step !=0 && step % (numRows - 1) == 0){
+                if(direction == 1){
+                    direction = 0;
+                }else{
+                    direction = 1;
+                }
+            }
+        }
+        StringBuffer result = new StringBuffer();
+        for(int h = 0; h < steps.length;h++){
+            for(int t = 0; t < steps[0].length;t++){
+                if(Objects.nonNull(steps[h][t])){
+                    result.append(steps[h][t]);
+                }
+            }
+        }
+        return result.toString();
+    }
 
     public static void main(String[] args) {
-        System.out.println(convert("PAYPALISHIRING", 4));
+        System.out.println(convert1("PAYPALISHIRING", 4));
     }
 }

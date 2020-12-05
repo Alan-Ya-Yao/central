@@ -90,6 +90,7 @@ public class StringBasic {
         return isPositive? initial:-initial;
     }
 
+
     public static void main(String[] args) {
 //        System.out.println(myAtoi("1"));
         String string = "";

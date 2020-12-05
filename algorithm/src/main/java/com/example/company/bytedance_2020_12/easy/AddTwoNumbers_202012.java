@@ -1,4 +1,4 @@
-package com.example.easy;
+package com.example.company.bytedance_2020_12.easy;
 
 import com.example.algorithm.datastrcture.entity.ListNode;
 
