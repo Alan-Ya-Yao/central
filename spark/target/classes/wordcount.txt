@@ -1,4 +1,0 @@
-hadoop scala spark hive
-kafka scala spark spark
-hbase redis hive storm
-flink flink flink storm
