@@ -38,6 +38,12 @@ public class BestTimeToBuyAndSellStockWithCooldown {
         return;
     }
 
+    /**
+     * DP解法 - https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/dong-tai-gui-hua-by-liweiwei1419-5/
+     *
+     * */
+
+
     public static void main(String[] args) {
         BestTimeToBuyAndSellStockWithCooldown solution = new BestTimeToBuyAndSellStockWithCooldown();
         System.out.println(solution.maxProfit(new int[]{1,2,5, 7, 8, 11, 1, 13, 22,23}));
