@@ -1,7 +1,6 @@
 package com.example.algorithm.tree;
 
 import com.example.algorithm.datastrcture.entity.TreeNode;
-import scala.Int;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
