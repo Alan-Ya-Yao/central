@@ -9,11 +9,11 @@ public class lambda_2020_12 {
         String [] tmps = new String[]{"ac", "bd", "cd", "ef"};
 
         String tmpString = Arrays.stream(tmps).collect(Collectors.joining());
-        System.out.println(tmpString);
+        System.out.println(tmpString); //acbdcdef
 
         List<String> tmpList = Arrays.stream(tmps).map(e -> {
             return e + "-";
         }).collect(Collectors.toList());
-        tmpList.stream().forEach(System.out::print);
+        tmpList.stream().forEach(System.out::print); //ac-bd-cd-ef-
     }
 }
