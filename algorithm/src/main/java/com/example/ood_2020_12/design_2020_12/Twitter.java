@@ -3,7 +3,11 @@ package com.example.ood_2020_12.design_2020_12;
 import java.util.*;
 
 public class Twitter {
-    //alan 注意限制 list of tweets的大小
+    /***
+     *     alan 注意限制 list of tweets的大小
+     *
+     *
+     */
     private HashMap<Integer, List<Tweets>> userTweets;
 
     private HashMap<Integer, Set<Integer>> userFollowerId;
