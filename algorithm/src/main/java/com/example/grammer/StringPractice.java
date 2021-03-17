@@ -24,5 +24,14 @@ public class StringPractice {
         ls.add("好你好");
         ls.add("很腻害");
         System.out.println(ls.toString());
+
+        StringBuffer sb = new StringBuffer();
+        sb.append("id : ").append("my id").append("\n");
+        sb.append("name : ").append("my name").append("\n");
+        sb.append("description : ").append("my desc");
+        System.out.println(sb);
+
     }
+
+
 }
