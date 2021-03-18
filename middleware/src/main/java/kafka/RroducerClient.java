@@ -5,6 +5,8 @@ import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
@@ -23,6 +25,8 @@ import java.util.concurrent.TimeUnit;
 
 //reference https://zhixiangyuan.github.io/2020/02/17/kafka-client-%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/
 public class RroducerClient {
+
+    private static final Logger logger = LoggerFactory.getLogger(RroducerClient.class);
 
     private static Producer<String, String> createProducer() {
         // 设置 Producer 的属性
@@ -55,12 +59,13 @@ public class RroducerClient {
         // 同步发送消息
         for (int i = 0; ; i++) {
             // 创建消息。传入的三个参数，分别是 Topic ，消息的 key ，消息的 message
-            ProducerRecord<String, String> message = new ProducerRecord<>("my_topic", "key", "test message : " + i);
+            String[] messages = new String[]{"hadoop scala spark hive", "kafka scala spark spark", "hbase redis hive storm","flink flink flink storm" };
+            ProducerRecord<String, String> message = new ProducerRecord<>("streaming", "key" + i, messages[i % 4]);
             Future<RecordMetadata> sendResultFuture = producer.send(message);
             RecordMetadata result = sendResultFuture.get();
-            System.out.println(String.format("message sent to [%s], partition [%s], offset [%s].",
-                    result.topic(), result.partition(), result.offset()));
-            TimeUnit.MILLISECONDS.sleep(500);
+            logger.info(String.format("message sent to [%s], partition [%s], offset [%s], key [%s]",
+                    result.topic(), result.partition(), result.offset(), message.key()));
+            TimeUnit.MILLISECONDS.sleep(1000);
         }
     }
 }

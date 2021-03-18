@@ -58,7 +58,7 @@ public class ConsumerMain {
         Consumer<String, String> consumer = createConsumer();
 
         // 订阅消息
-        consumer.subscribe(Collections.singleton("my_topic"));
+        consumer.subscribe(Collections.singleton("streaming"));
 
         // 拉取消息
         while (true) {

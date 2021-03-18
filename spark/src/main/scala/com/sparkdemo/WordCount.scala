@@ -2,11 +2,15 @@ package com.sparkdemo
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-
 object WordCount {
+
+  def init(): Unit ={
+    print("initing");
+  }
 
   def main(args: Array[String]): Unit = {
 
+    init();
 //    //创建SparkConf并设置App名称
     val conf = new SparkConf().setAppName("wc").setMaster("local[*]")
 //
