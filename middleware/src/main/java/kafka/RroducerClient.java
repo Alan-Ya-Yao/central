@@ -63,7 +63,7 @@ public class RroducerClient {
             ProducerRecord<String, String> message = new ProducerRecord<>("streaming", "key" + i, messages[i % 4]);
             Future<RecordMetadata> sendResultFuture = producer.send(message);
             RecordMetadata result = sendResultFuture.get();
-            logger.info(String.format("message sent to [%s], partition [%s], offset [%s], key [%s]",
+            System.out.println(String.format("message sent to [%s], partition [%s], offset [%s], key [%s]",
                     result.topic(), result.partition(), result.offset(), message.key()));
             TimeUnit.MILLISECONDS.sleep(1000);
         }

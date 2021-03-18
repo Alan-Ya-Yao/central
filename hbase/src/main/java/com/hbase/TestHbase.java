@@ -112,6 +112,7 @@ public class TestHbase {
 
     public static void main(String[] args) throws IOException {
 
+        System.out.println("22");
         //判断表是否存在
         System.out.println(tableExist("student1"));
 
