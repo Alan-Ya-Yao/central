@@ -1,4 +1,4 @@
-package com.example.ood_2020_12.design_2020_12;
+package com.example.design.ood_2020;
 
 import java.util.*;
 
