@@ -49,11 +49,11 @@ public class PrintFooBarAlternately_2021_01 {
 
     public static void main(String[] args) throws InterruptedException {
         PrintFooBarAlternately_2021_01 solution = new PrintFooBarAlternately_2021_01(10);
-        solution.foo(new Thread(()->{
-            System.out.println("foo");
-        }));
-        solution.bar(new Thread(()->{
-            System.out.println("bar");
-        }));
+//        solution.foo(new Thread(()->{
+//            System.out.println("foo");
+//        }));
+//        solution.bar(new Thread(()->{
+//            System.out.println("bar");
+//        }));
     }
 }

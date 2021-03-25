@@ -32,22 +32,77 @@ public class Trie {
      * */
 
     /** Initialize your data structure here. */
-    public Trie() {
+    TrieNode root;
 
+    static class TrieNode{
+        Character cur;
+        TrieNode[] children;
+        Boolean isEnd;
+
+        TrieNode(char cur){
+            this.cur = cur;
+            children = new TrieNode[26];
+            isEnd = false;
+        }
+
+        Boolean contains(char child){
+            return children[child - 'a'] != null;
+        }
+
+        void add(char child){
+            TrieNode toAdd = new TrieNode(child);
+            children[child - 'a'] = toAdd;
+        }
+
+        TrieNode get(char child){
+            return children[child - 'a'];
+        }
+    }
+    public Trie() {
+        root = new TrieNode('r');
     }
 
     /** Inserts a word into the trie. */
     public void insert(String word) {
-
+        TrieNode curNode = root;
+        for(int i = 0; i < word.length(); i++){
+            char cchar = word.charAt(i);
+            if(!curNode.contains(cchar)){
+               curNode.add(cchar);
+            }
+           curNode = curNode.get(cchar);
+            if(i == word.length() - 1){
+                curNode.isEnd = true;
+            }
+        }
     }
 
     /** Returns if the word is in the trie. */
     public boolean search(String word) {
-
+        TrieNode curNode = root;
+        for(int i = 0; i < word.length(); i++){
+            char cchar = word.charAt(i);
+            if(!curNode.contains(cchar)){
+                return false;
+            }
+            curNode = curNode.get(cchar);
+            if(i == word.length() - 1){
+                return curNode.isEnd;
+            }
+        }
+        return true;
     }
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
     public boolean startsWith(String prefix) {
-
+        TrieNode curNode = root;
+        for(int i = 0; i < prefix.length(); i++){
+            char cchar = prefix.charAt(i);
+            if(!curNode.contains(cchar)){
+                return false;
+            }
+            curNode = curNode.get(cchar);
+        }
+        return true;
     }
 }
