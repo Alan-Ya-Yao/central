@@ -12,6 +12,14 @@ import com.example.algorithm.datastrcture.entity.ListNode;
  **/
 public class ListBasic {
 
+
+    public static void printList(ListNode head){
+        if(head != null) {
+            System.out.print(head.val + " ");
+            printList(head.next);
+        }
+    }
+
     public ListNode reverseList(ListNode head) {
         if(head == null || head.next == null){
             return head;

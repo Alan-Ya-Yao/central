@@ -11,3 +11,6 @@ export PATH=/usr/local/bin:$PATH
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH:.
+
+##hive
+export HIVE_HOME=/usr/local/Cellar/hive/3.1.2_3
