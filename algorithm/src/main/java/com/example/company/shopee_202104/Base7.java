@@ -22,16 +22,17 @@ public class Base7 {
      * Output: "-10"
      * */
     public static String convertToBase7(int num) {
-        int absNum = Math.abs(num);
-        StringBuilder sb = new StringBuilder();// not thread safe
-        while(absNum != 0){
-            sb.insert(0, absNum%7);
-            absNum = absNum/7;
+        if(num == 0){
+            return "0";
         }
-        if(num < 0){
-            sb.insert(0, '-');
+
+        StringBuffer result = new StringBuffer();
+        int carry = Math.abs(num);
+        while(carry != 0){
+            result.insert(0, carry % 7);
+            carry = carry / 7;
         }
-        return sb.toString();
+        return num > 0 ? result.toString() : "-" + result.toString();
     }
 
     public static void main(String[] args) {
