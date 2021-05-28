@@ -1,9 +1,6 @@
 package com.example.algorithm.recursion.recursion_classic_202104;
 
-import scala.math.Ordering;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * /**
