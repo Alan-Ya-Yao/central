@@ -29,12 +29,15 @@ public class Practice {
 //        System.out.println();
 
 
-        String s = "dafasd";
-        for(Character c:s.toCharArray()){
-            System.out.println(c);
-        }
+//        String s = "dafasd";
+//        for(Character c:s.toCharArray()){
+//            System.out.println(c);
+//        }
+//
+//        Date date = new Date("ada");
+//        System.out.println(date);
 
-        Date date = new Date("ada");
-        System.out.println(date);
+        String nonL = "";
+        System.out.println(nonL + "11");
     }
 }

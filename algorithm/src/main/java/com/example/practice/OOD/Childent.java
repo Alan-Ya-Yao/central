@@ -15,7 +15,15 @@ public class Childent extends Parents {
     }
 
     public static void main(String[] args) {
+
+        /**
+         * 子类调用父类的方法，父类方法里的方法被子类重写，则这个方法使用子类
+         * parent's name
+         * Childent overRid
+         *
+         * */
         Childent childent = new Childent();
         childent.print_name();
+
     }
 }
