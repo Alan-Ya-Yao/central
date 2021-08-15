@@ -1,6 +1,8 @@
 package com.example.practice;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.*;
+import org.junit.Test;
 
 import java.util.Date;
 
@@ -22,22 +24,23 @@ public class Practice {
     private String name;
     private String age;
     public static void main(String[] args) {
-//        char[] tmp = new char[2];
-//        for(int i = 0; i < tmp.length;i++){
-//            tmp[i] = 'a';
-//        }
-//        System.out.println();
-
-
-//        String s = "dafasd";
-//        for(Character c:s.toCharArray()){
-//            System.out.println(c);
-//        }
+//        String json = "{\n" +
+//                "    \"cpu\": \"0.25\",\n" +
+//                "    \"cpuFrequency\": \"1\",\n" +
+//                "    \"mem\": \"0.95\",\n" +
+//                "    \"memFrequency\": \"1\",\n" +
+//                "    \"error\": \"300\",\n" +
+//                "    \"errorFrequency\":\"2\",\n" +
+//                "    \"fgc\": \"0.9\",\n" +
+//                "    \"fgcFrequency\":\"1\"\n" +
+//                "}";
 //
-//        Date date = new Date("ada");
-//        System.out.println(date);
+//        String s = JSONObject.toJSONString(json);
+//        System.out.println(s);
 
-        String nonL = "";
-        System.out.println(nonL + "11");
+        String selfHost = "riskmodelcenter-87-5191";
+        System.out.println(selfHost.split("-")[0]);
     }
+
+
 }

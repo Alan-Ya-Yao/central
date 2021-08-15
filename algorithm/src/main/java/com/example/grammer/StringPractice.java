@@ -1,5 +1,7 @@
 package com.example.grammer;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,4 +36,32 @@ public class StringPractice {
     }
 
 
+
+    @Test
+    public void modifiedString(){
+        String s = "HEARTBEAT_RMC_riskmodelcentermix-99-6139";
+        String modifedS = s.replaceAll("(HEARTBEAT_RMCMIX_|HEARTBEAT_RMC_)", "");
+        System.out.println(modifedS);
+    }
+
+    @Test
+    public void removeItemFromList(){
+        String tmp = "BBCER00003943;BBCER00023491;BBCER00034591";
+        String rex = "BBCER00034591;|BBCER00034591";
+        tmp = tmp.replaceAll(rex, "");
+        System.out.println(tmp);
+    }
+
+    @Test
+    public void splitStringTest(){
+        String tmp = ";BBCER00003943;BBCER00023491;BBCER00034591";
+
+        String[] tmps = tmp.split(";");
+        List<String> tmpsList = Arrays.asList(tmps);
+        for(String ss : tmpsList){
+            if(!ss.isEmpty()){
+                System.out.println(ss);
+            }
+        }
+    }
 }

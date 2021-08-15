@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="fatherCategory" class="main.java.FatherCategory">
+        <!--        name就是属性的名称，value就是注入到该属性的值-->
+        <property name="name" value="Father Hello Word"/>
+    </bean>
+
+    <bean id="childrenCategory" class="main.java.ChildrenCategory">
+        <!--        name就是属性的名称，value就是注入到该属性的值-->
+        <property name="name" value="Children Hello Word"/>
+    </bean>
+
+    <bean id="inheritance" class="main.java.Inheritance">
+        <property name="fCategory" ref="fatherCategory"/>
+<!--        <property name="cCategory" ref="childrenCategory"/>-->
+    </bean>
+</beans>
